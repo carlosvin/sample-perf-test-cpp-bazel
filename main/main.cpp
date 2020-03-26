@@ -13,9 +13,9 @@ int main (int argc , char ** argv)
 	chrono::steady_clock::time_point t1 = chrono::steady_clock::now();
 
 	PerrinNumber perfPerringNumber;
-	unsigned const STOP_TEST = numeric_limits<short>::max();//UINT_MAX /10000;
+	unsigned const MAX_INPUTS = 1000000;
 
-	for (unsigned i=1, n=0; i<STOP_TEST; i = i*2, n++){
+	for (unsigned i=1, t=0; i<MAX_INPUTS; i = i*2, t++){
 		chrono::steady_clock::time_point ti1 = chrono::steady_clock::now();
 
 		for (short j=0; j<1000; j++) {
@@ -24,7 +24,7 @@ int main (int argc , char ** argv)
 
 		chrono::duration<double> time_span_i = chrono::duration_cast<chrono::duration<double>>(
 				chrono::steady_clock::now() - ti1);
-		cout << "Test " << n << "\tNumber of inputs " << i << ":\t" << time_span_i.count() << "s" << endl;
+		cout << "Test " << t << "\tNumber of inputs " << i << ":\t" << time_span_i.count() << "s" << endl;
 	}
 
 	chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
