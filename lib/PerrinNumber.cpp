@@ -1,22 +1,25 @@
 
 #include "PerrinNumber.h"
-#include <string.h>
+#include <array>
+
+using namespace std;
 
 PerrinNumber::PerrinNumber() {}
-
 PerrinNumber::~PerrinNumber() {}
 
-void PerrinNumber::perform(unsigned complexity,  unsigned * res)
+unsigned PerrinNumber::perform(unsigned n)
 {
-	memset(res, 0, complexity*sizeof(unsigned));
-	res[0] = 3;
-	res[2] = 2;
-	f(complexity-1, res);
-}
-
-unsigned PerrinNumber::f(unsigned n, unsigned *res ){
-	if (n > 2 && res[n] == 0){
-		res[n] = f(n-2, res) + f(n-3, res);
+	array<unsigned, 3> res {3, 0, 2};
+	if (n < 3) {
+		return res[n];
 	}
-	return res[n];
+
+	unsigned p;
+	for (unsigned i=3; i <=n; i++) {
+		p = res[0] + res[2]; 
+        res[0] = res[1]; 
+        res[1] = res[2]; 
+		res[2] = p;
+	}
+	return p;
 }

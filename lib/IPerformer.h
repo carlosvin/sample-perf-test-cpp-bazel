@@ -1,9 +1,11 @@
 
 
+#include <vector>
+
 class IPerformer
 {
 public:
-	virtual ~IPerformer(){};
+	virtual ~IPerformer() = default;
 
-	virtual void perform(unsigned complexity,  unsigned * res) = 0;
+	virtual unsigned perform(unsigned n) = 0;
 };

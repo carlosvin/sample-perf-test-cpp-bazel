@@ -9,8 +9,8 @@ public:
 	PerrinNumber();
 	virtual ~PerrinNumber();
 
-	virtual void perform(unsigned complexity,  unsigned * res);
-	unsigned f(unsigned n, unsigned * res);
+	virtual unsigned perform(unsigned n);
+
 
 };
 

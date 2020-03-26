@@ -15,17 +15,16 @@ int main (int argc , char ** argv)
 	PerrinNumber perfPerringNumber;
 	unsigned const STOP_TEST = numeric_limits<short>::max();//UINT_MAX /10000;
 
-	for (unsigned i=1, n=0; i<STOP_TEST; i = i*2){
+	for (unsigned i=1, n=0; i<STOP_TEST; i = i*2, n++){
 		chrono::steady_clock::time_point ti1 = chrono::steady_clock::now();
 
-		unsigned res [i];
-		for (short j=0; j<1000; j++)
-			perfPerringNumber.perform(i, res);
-		n++;
+		for (short j=0; j<1000; j++) {
+			perfPerringNumber.perform(i);
+		}
 
 		chrono::duration<double> time_span_i = chrono::duration_cast<chrono::duration<double>>(
 				chrono::steady_clock::now() - ti1);
-		cout << "Test " << n << "\tComplexity " << i << ":\t" << time_span_i.count() << "s" << endl;
+		cout << "Test " << n << "\tNumber of inputs " << i << ":\t" << time_span_i.count() << "s" << endl;
 	}
 
 	chrono::steady_clock::time_point t2 = chrono::steady_clock::now();
