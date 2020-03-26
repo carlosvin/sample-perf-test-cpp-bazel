@@ -1,10 +1,3 @@
-/*
- * main.cpp
- *
- *  Created on: 27/11/2013
- *      Author: xIS16031
- */
-
 
 #include "lib/PerrinNumber.h"
 #include <iostream>

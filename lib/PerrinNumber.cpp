@@ -1,9 +1,3 @@
-/*
- * PerrinNumber.cpp
- *
- *  Created on: 28/11/2013
- *      Author: xIS16031
- */
 
 #include "PerrinNumber.h"
 #include <string.h>

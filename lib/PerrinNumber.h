@@ -1,9 +1,3 @@
-/*
- * PerrinNumber.h
- *
- *  Created on: 28/11/2013
- *      Author: xIS16031
- */
 
 #ifndef PERRINNUMBER_H_
 #define PERRINNUMBER_H_
